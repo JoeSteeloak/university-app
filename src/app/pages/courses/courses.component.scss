@@ -11,3 +11,16 @@ td,
 th {
     width: 25%;
 }
+
+.success-snackbar {
+    background-color: #4caf50;
+    /* Grön färg för framgång */
+    color: #fff;
+}
+
+.error-snackbar {
+    background-color: #f44336;
+    /* Röd färg för fel */
+    color: #fff;
+}
+

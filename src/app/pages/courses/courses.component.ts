@@ -8,7 +8,9 @@ import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select';  // Import MatSelectModule
+import { MatSelectModule } from '@angular/material/select';  
+import { MatIconModule } from '@angular/material/icon';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 
 export interface CourseData {
   courseCode: string;
@@ -29,22 +31,24 @@ export interface CourseData {
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
-    MatSelectModule  // Include MatSelectModule in imports
+    MatSelectModule,
+    MatIconModule,
+    MatSnackBarModule
   ],
   templateUrl: './courses.component.html',
   styleUrls: ['./courses.component.scss']
 })
 export class CoursesComponent implements OnInit, AfterViewInit {
-  displayedColumns: string[] = ['courseCode', 'courseName', 'points', 'subject', 'syllabus'];
+  displayedColumns: string[] = ['courseCode', 'courseName', 'points', 'subject', 'syllabus', "add"];
   dataSource: MatTableDataSource<CourseData> = new MatTableDataSource<CourseData>();
-  originalCourseData: CourseData[] = []; // To store original course data
-  subjects: string[] = []; // To store unique subjects
-  selectedSubject: string = ''; // To store the selected subject for filtering
+  originalCourseData: CourseData[] = []; // För att spara originalkursdatan
+  subjects: string[] = []; // för att spara unika objekt
+  selectedSubject: string = ''; // spara för filtrering
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private fetchCoursesService: FetchCoursesService) {}
+  constructor(private fetchCoursesService: FetchCoursesService, private snackBar: MatSnackBar) {}
 
   ngOnInit() {
     this.fetchCoursesService.getCourses().subscribe((data: Course[]) => {
@@ -55,7 +59,7 @@ export class CoursesComponent implements OnInit, AfterViewInit {
         subject: course.subject,
         syllabus: course.syllabus
       }));
-      this.originalCourseData = courseData; // Save the original course data
+      this.originalCourseData = courseData; // Spara originalkursdatan
       this.dataSource.data = courseData;
       this.subjects = Array.from(new Set(courseData.map(course => course.subject))); // Get unique subjects
     });
@@ -80,11 +84,37 @@ export class CoursesComponent implements OnInit, AfterViewInit {
       const filteredData = this.originalCourseData.filter(course => course.subject.toLowerCase() === this.selectedSubject.toLowerCase());
       this.dataSource.data = filteredData;
     } else {
-      this.dataSource.data = this.originalCourseData; // Reset to original data if no subject is selected
+      this.dataSource.data = this.originalCourseData; // återställ till originalkursdata
     }
 
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
+    }
+  }
+
+  addToLocalStorage(course: CourseData) {
+    // Hämta nuvarande array från localStorage
+    const currentData = JSON.parse(localStorage.getItem('selectedCourses') || '[]');
+  
+    // Kontrollera om kursen redan finns
+    const courseExists = currentData.some((storedCourse: CourseData) => storedCourse.courseCode === course.courseCode);
+  
+    if (courseExists) {
+      // Om kursen redan finns, visa en snackbar med ett felmeddelande
+      this.snackBar.open('Kursen är redan tillagd!', 'Stäng', {
+        duration: 3000,
+        panelClass: ['error-snackbar']
+      });
+    } else {
+      // Om kursen inte finns, lägg till den till arrayen och spara i localStorage
+      currentData.push(course);
+      localStorage.setItem('selectedCourses', JSON.stringify(currentData));
+  
+      // Visa en snackbar med ett framgångsmeddelande
+      this.snackBar.open('Kursen sparades till ditt ramschema!', 'Stäng', {
+        duration: 3000,
+        panelClass: ['success-snackbar']
+      });
     }
   }
 }
