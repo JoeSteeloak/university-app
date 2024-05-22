@@ -1,0 +1,32 @@
+$main-color: #13325b; // Universitetets färg
+$secondary-color: #9f7944;
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff; 
+    padding: 10px 20px;
+    color: white;
+}
+
+.logo-container {
+    flex: 0 0 auto;
+}
+
+.logo {
+    height: 100px; // Justera höjden på loggan
+}
+
+.university-name {
+    flex: 1;
+    text-align: center;
+}
+
+.university-name h1 {
+    margin: 0;
+    font-size: 1.5em;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: $main-color;
+    text-transform: uppercase;
+}
