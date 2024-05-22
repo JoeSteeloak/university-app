@@ -3,25 +3,66 @@ $secondary-color: #9f7944;
 
 footer {
     background-color: #f3f3f3;
-    height: 200px;
+    color: $main-color;
     width: 100%;
+    padding: 20px 0;
     position: absolute;
     bottom: 0;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    p{
-        margin-left: 10px;
-    }
-    i {
-        margin: 10px;
-        margin-top: 10px;
-        color: $main-color;
-    }
-    div {
-        display: inline;
-    }
-    .box2 {
-        
-    }
+    
 }
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 20px;
+}
+
+.social-media,
+.contact-info {
+    display: flex;
+}
+
+.social-media {
+    align-items: center;
+}
+
+.social-media p {
+    margin-right: 15px;
+    margin-left: 15px;
+    font-size: .9em;
+}
+
+.social-media i,
+.contact-info i {
+    margin-right: 10px;
+}
+
+.social-media i {
+    margin-left: 10px;
+}
+
+.contact-info {
+    flex-direction: column;
+}
+
+.contact-info div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    text-decoration: none;
+    color: $main-color;
+    margin-right: 15px;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+i:hover {
+    color: #9f7944;
+    cursor: pointer;
+} 
