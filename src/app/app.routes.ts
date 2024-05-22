@@ -4,8 +4,8 @@ import { OverallPlanComponent } from './pages/overall-plan/overall-plan.componen
 import { HomeComponent } from './pages/home/home.component';
 
 export const routes: Routes = [
-    { path: "home", component: HomeComponent },
-    { path: "courses", component: CoursesComponent },
+    { path: "home", component: HomeComponent, title: 'Pildammarnas Universitet' },
+    { path: "courses", component: CoursesComponent, title: 'Kurser - Pildammarnas Universitet' },
     { path: "", redirectTo: "/home", pathMatch: "full"},
-    { path: "overall-plan", component: OverallPlanComponent}
+    { path: "overall-plan", component: OverallPlanComponent, title: 'Ramschema - Pildammarnas Universitet'}
 ];

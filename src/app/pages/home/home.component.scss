@@ -29,3 +29,51 @@ $secondary-color: #9f7944;
         
     }
 }
+
+.news-wrapper {
+    padding: 20px;
+    background-color: #fff;
+}
+
+.news-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.news {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    flex: 1 1 calc(33.333% - 20px); 
+    padding: 15px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.news:hover {
+    cursor: pointer;
+    h3 {
+        text-decoration: underline;
+    }
+}
+
+.news img {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover; 
+    border-radius: 8px 8px 0 0;
+}
+
+.news h3 {
+    margin: 15px 0;
+    font-size: 1.25em;
+}
+
+.news p {
+    color: #666;
+}
+
+.main-content {
+    padding-bottom: 100px; 
+}
