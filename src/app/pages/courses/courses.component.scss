@@ -37,7 +37,7 @@ a:visited {
 
 mat-icon:hover {
     color: #9f7944;
-} 
+}
 
 /* Media queries för att göra sidan responsiv */
 @media (max-width: 1200px) {
@@ -108,17 +108,27 @@ mat-icon:hover {
     th {
         width: auto;
     }
-    
+
     table {
         font-size: 0.9em;
     }
 
     /* Gömma ämne-kolumnen */
+
     .mat-column-subject {
         display: none;
     }
 
-    .mat-column-add {
+    .mat-column-courseCode {
         display: none;
+    }
+
+    .mat-column-syllabus {
+        padding: 0;
+    }
+
+    .mat-column-add {
+        max-width: 50px;
+        padding: 0;
     }
 }

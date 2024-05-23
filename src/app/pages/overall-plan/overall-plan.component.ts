@@ -58,7 +58,7 @@ export class OverallPlanComponent implements OnInit, AfterViewInit {
     this.calculateTotalPoints();
     this.snackBar.open(`Course ${course.courseCode} removed`, 'Close', {
       duration: 3000,
-      verticalPosition: 'top',
+      verticalPosition: 'bottom',
     });
   }
 

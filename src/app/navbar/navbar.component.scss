@@ -1,32 +1,33 @@
 $main-color: #13325b; // Universitetets färg
 $secondary-color: #9f7944;
 
-.navbar {
+#navbar {
     background-color: $main-color;
     overflow: hidden;
-}
 
-.navbar-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
 
-.navbar-item {
-    flex: 1;
-    text-align: center;
-}
+        li {
+            flex: 1;
+            text-align: center;
 
-.navbar-item a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
+            a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
 
-.navbar-item a:hover,
-.navbar-item a.active {
-    background-color: $secondary-color;
+            a:hover,
+            a.active {
+                background-color: $secondary-color;
+            }
+        }
+    }
+
 }
