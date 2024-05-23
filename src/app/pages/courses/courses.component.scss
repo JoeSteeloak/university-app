@@ -40,21 +40,6 @@ mat-icon:hover {
 }
 
 /* Media queries för att göra sidan responsiv */
-@media (max-width: 1200px) {
-    .mat-mdc-form-field {
-        width: 45%;
-        margin-right: 5%;
-    }
-
-    .mat-mdc-form-field:last-child {
-        margin-right: 0;
-    }
-
-    td,
-    th {
-        width: 22%;
-    }
-}
 
 @media (max-width: 768px) {
     .mat-mdc-form-field {
