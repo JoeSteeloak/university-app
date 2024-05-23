@@ -18,3 +18,52 @@ a:visited {
 mat-icon:hover {
     color: #9f7944;
 } 
+
+h2 {
+    margin-left: 10px;
+}
+
+@media (max-width: 480px) {
+    .mat-mdc-form-field {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .mat-column-points {
+        max-width: 58px;
+        padding-left: 0;
+    }
+
+    .mat-column-syllabus {
+        padding-left: 0;
+    }
+
+    td {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .mat-header-cell,
+    .mat-cell {
+        font-size: 0.8em;
+    }
+
+
+    td,
+    th {
+        width: auto;
+    }
+    
+    table {
+        font-size: 0.9em;
+    }
+
+    /* Gömma ämne-kolumnen */
+    .mat-column-subject {
+        display: none;
+    }
+    /* gömma radera-kolumnen */
+    .mat-column-remove {
+        display: none;
+    }
+}

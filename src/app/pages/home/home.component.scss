@@ -56,6 +56,10 @@ $secondary-color: #9f7944;
     h3 {
         text-decoration: underline;
     }
+    img {
+        filter: brightness(70%);
+        transition: 1s;
+    }
 }
 
 .news img {

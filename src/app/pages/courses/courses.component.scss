@@ -25,8 +25,7 @@ th {
     background-color: #f44336;
     /* Röd färg för fel */
     color: #fff;
-}$main-color: #13325b; // Universitetets färg
-$secondary-color: #9f7944;
+}
 
 a {
     color: $main-color;
@@ -39,3 +38,87 @@ a:visited {
 mat-icon:hover {
     color: #9f7944;
 } 
+
+/* Media queries för att göra sidan responsiv */
+@media (max-width: 1200px) {
+    .mat-mdc-form-field {
+        width: 45%;
+        margin-right: 5%;
+    }
+
+    .mat-mdc-form-field:last-child {
+        margin-right: 0;
+    }
+
+    td,
+    th {
+        width: 22%;
+    }
+}
+
+@media (max-width: 768px) {
+    .mat-mdc-form-field {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    td,
+    th {
+        width: auto;
+    }
+
+    .mat-header-cell,
+    .mat-cell {
+        font-size: 0.9em;
+    }
+
+    /* Gömma ämne-kolumnen */
+    .mat-column-subject {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .mat-mdc-form-field {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .mat-column-points {
+        max-width: 58px;
+        padding-left: 0;
+    }
+
+    .mat-column-syllabus {
+        padding-left: 0;
+    }
+
+    td {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .mat-header-cell,
+    .mat-cell {
+        font-size: 0.8em;
+    }
+
+
+    td,
+    th {
+        width: auto;
+    }
+    
+    table {
+        font-size: 0.9em;
+    }
+
+    /* Gömma ämne-kolumnen */
+    .mat-column-subject {
+        display: none;
+    }
+
+    .mat-column-add {
+        display: none;
+    }
+}
