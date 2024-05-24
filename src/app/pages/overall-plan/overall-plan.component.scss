@@ -24,6 +24,11 @@ h2 {
     margin-left: 10px;
 }
 
+p {
+    text-align: center;
+    font-weight: 700;
+}
+
 /* Media queries för att göra sidan responsiv */
 @media (max-width: 1200px) {
     .mat-mdc-form-field {
