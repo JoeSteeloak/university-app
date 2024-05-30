@@ -1,5 +1,12 @@
 # UniversityApp
 
+## purpose
+
+Webbappen skapades som ett projekt för kursen programmering i Typescript.
+Syftet var att använda Angular för att skapa en webbapp åt ett fiktivt universitet.
+Med HttpClient hämtas data om universitetets kurser som skrivs ut och kan sparas i local storage för att skapa ett personligt ramschema.
+Angular Material används för att skapa design så som tabeller och snackbar.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.3.
 
 ## Development server
